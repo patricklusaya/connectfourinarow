@@ -1,0 +1,33 @@
+import React from 'react';
+import { useAppSelector } from '../store/hooks';
+import GameModeSelector from './GameModeSelector';
+import GameBoard from './GameBoard';
+import GameControls from './GameControls';
+import ThemeToggle from './ThemeToggle';
+import '../styles/Game.css';
+
+const Game: React.FC = () => {
+  const { gameMode } = useAppSelector((state) => state.game);
+
+  return (
+    <div className="game-container">
+      <ThemeToggle />
+      <div className="game-header">
+        <h1>Connect Four</h1>
+        <p className="game-subtitle">Connect 4 pieces in a row to win!</p>
+      </div>
+      
+      {!gameMode ? (
+        <GameModeSelector />
+      ) : (
+        <>
+          <GameControls />
+          <GameBoard />
+        </>
+      )}
+    </div>
+  );
+};
+
+export default Game;
+
