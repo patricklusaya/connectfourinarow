@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
-import { makePlayerMove, makeAiMove, WinningCell } from '../store/slices/gameSlice';
+import { makePlayerMove, makeAiMove } from '../store/slices/gameSlice';
+import type { WinningCell } from '../store/slices/gameSlice';
 import { playDropSound } from '../utils/sounds';
 import '../styles/GameBoard.css';
 
