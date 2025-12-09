@@ -3,6 +3,7 @@ import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 export type Player = 1 | 2 | null;
 export type Board = Player[][];
 export type GameMode = 'friend' | 'robot' | null;
+export type WinningCell = { row: number; col: number };
 
 interface GameState {
   board: Board;
@@ -10,6 +11,7 @@ interface GameState {
   winner: Player | 'draw' | null;
   gameMode: GameMode;
   loading: boolean;
+  winningCells: WinningCell[];
 }
 
 const ROWS = 6;
@@ -284,7 +286,7 @@ const gameSlice = createSlice({
       state.board = createEmptyBoard();
       state.currentPlayer = 1;
       state.winner = null;
-      state.isAiThinking = false;
+      state.winningCells = [];
     },
     setGameMode: (state, action: PayloadAction<GameMode>) => {
       state.gameMode = action.payload;

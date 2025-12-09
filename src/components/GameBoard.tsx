@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
-import { makePlayerMove, makeAiMove } from '../store/slices/gameSlice';
+import { makePlayerMove, makeAiMove, WinningCell } from '../store/slices/gameSlice';
 import { playDropSound } from '../utils/sounds';
 import '../styles/GameBoard.css';
 
@@ -63,7 +63,7 @@ const GameBoard: React.FC = () => {
     const isDropping = Array.from(droppingPieces.values()).includes(col);
     const dropRow = getDropRow(col);
     const isDropTarget = isDropping && row <= dropRow;
-    const isWinningCell = winningCells.some(cell => cell.row === row && cell.col === col);
+    const isWinningCell = winningCells.some((cell: WinningCell) => cell.row === row && cell.col === col);
 
     return (
       <div

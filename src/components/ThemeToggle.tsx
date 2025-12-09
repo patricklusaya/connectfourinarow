@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
-import { toggleTheme, setTheme } from '../store/slices/themeSlice';
+import { toggleTheme } from '../store/slices/themeSlice';
 import '../styles/ThemeToggle.css';
 
 const ThemeToggle: React.FC = () => {

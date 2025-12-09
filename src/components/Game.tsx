@@ -3,7 +3,6 @@ import { useAppSelector } from '../store/hooks';
 import GameModeSelector from './GameModeSelector';
 import GameBoard from './GameBoard';
 import GameControls from './GameControls';
-import ThemeToggle from './ThemeToggle';
 import '../styles/Game.css';
 
 const Game: React.FC = () => {
