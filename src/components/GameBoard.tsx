@@ -13,7 +13,7 @@ const GameBoard: React.FC = () => {
   const [droppingPieces, setDroppingPieces] = useState<Map<string, number>>(new Map());
   const [isAiThinking, setIsAiThinking] = useState(false);
 
-  // Handle AI move after a delay when it's AI's turn
+  // Handle AI move now after a delay when it's AI's turn
   useEffect(() => {
     if (gameMode === 'robot' && currentPlayer === 2 && !winner) {
       setIsAiThinking(true);
