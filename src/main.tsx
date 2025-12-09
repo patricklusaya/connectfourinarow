@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { Provider } from 'react-redux'
+import { Analytics } from '@vercel/analytics/react'
 import { store } from './store/store'
 import { setTheme } from './store/slices/themeSlice'
 import './index.css'
@@ -22,6 +23,7 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Provider store={store}>
       <App />
+      <Analytics />
     </Provider>
   </StrictMode>,
 )
