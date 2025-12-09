@@ -11,16 +11,20 @@ const Game: React.FC = () => {
 
   return (
     <div className="game-container">
-      <ThemeToggle />
-      <div className="game-header">
-        <h1>Connect Four</h1>
-        <p className="game-subtitle">Connect 4 pieces in a row to win!</p>
-      </div>
-      
+      {/* <ThemeToggle /> */}
       {!gameMode ? (
-        <GameModeSelector />
+        <>
+          <div className="game-header">
+            <h1>Connect Four</h1>
+            <p className="game-subtitle">Connect 4 pieces in a row to win!</p>
+          </div>
+          <GameModeSelector />
+        </>
       ) : (
         <>
+          <div className="game-header">
+            <h1>Connect Four</h1>
+          </div>
           <GameControls />
           <GameBoard />
         </>
