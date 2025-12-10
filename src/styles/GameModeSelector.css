@@ -68,9 +68,40 @@
 }
 
 .mode-icon {
-  font-size: 3rem;
-  line-height: 1;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
   transition: transform 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mode-icon-friend {
+  background: linear-gradient(135deg, #42a5f5 0%, #1e88e5 100%);
+  box-shadow: 0 4px 12px rgba(66, 165, 245, 0.4);
+}
+
+.mode-icon-friend::before {
+  content: '2P';
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: -2px;
+}
+
+.mode-icon-robot {
+  background: linear-gradient(135deg, #ff5252 0%, #e53935 100%);
+  box-shadow: 0 4px 12px rgba(255, 82, 82, 0.4);
+}
+
+.mode-icon-robot::before {
+  content: 'AI';
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: -2px;
 }
 
 .mode-button:hover .mode-icon {
@@ -107,7 +138,13 @@
   }
   
   .mode-icon {
-    font-size: 3rem;
+    width: 56px;
+    height: 56px;
+  }
+  
+  .mode-icon-friend::before,
+  .mode-icon-robot::before {
+    font-size: 1.3rem;
   }
   
   .mode-title {

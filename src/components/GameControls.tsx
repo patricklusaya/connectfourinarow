@@ -76,7 +76,7 @@ const GameControls: React.FC = () => {
 
   const getStatusMessage = () => {
     if (isAiThinking) {
-      return '🤖 Robot is thinking...';
+      return 'Robot is thinking...';
     }
     
     if (winner === 'draw') {
@@ -85,14 +85,14 @@ const GameControls: React.FC = () => {
     
     if (winner === 1) {
       return gameMode === 'robot' 
-        ? '🎉 You Win!' 
-        : '🏆 Player 1 Wins!';
+        ? 'You Win!' 
+        : 'Player 1 Wins!';
     }
     
     if (winner === 2) {
       return gameMode === 'robot' 
-        ? '😢 Robot Wins!' 
-        : '🏆 Player 2 Wins!';
+        ? 'Robot Wins!' 
+        : 'Player 2 Wins!';
     }
     
     return gameMode === 'robot' 
@@ -118,10 +118,10 @@ const GameControls: React.FC = () => {
 
         <div className="control-buttons">
           <button onClick={handleReset} className="btn btn-reset">
-            🔄 Reset Game
+            Reset Game
           </button>
           <button onClick={handleBackToMenu} className="btn btn-menu">
-            ← Back to Menu
+            Back to Menu
           </button>
         </div>
       </div>

@@ -7,11 +7,12 @@ import '../styles/GameBoard.css';
 
 const GameBoard: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { board, currentPlayer, winner, gameMode, winningCells } = useAppSelector(
+  const { board, currentPlayer, winner, gameMode, winningCells, lastPlacedCell } = useAppSelector(
     (state) => state.game
   );
   const [droppingPieces, setDroppingPieces] = useState<Map<string, number>>(new Map());
   const [isAiThinking, setIsAiThinking] = useState(false);
+
 
   // Handle AI move now after a delay when it's AI's turn
   useEffect(() => {
@@ -65,16 +66,20 @@ const GameBoard: React.FC = () => {
     const dropRow = getDropRow(col);
     const isDropTarget = isDropping && row <= dropRow;
     const isWinningCell = winningCells.some((cell: WinningCell) => cell.row === row && cell.col === col);
+    // Check if this is the final winning cell (last placed cell that caused the win)
+    const isFinalWinningCell = winner && winner !== 'draw' && 
+      lastPlacedCell?.row === row && lastPlacedCell?.col === col &&
+      isWinningCell;
 
     return (
       <div
         key={`${row}-${col}`}
         className={`cell ${player === 1 ? 'player1' : player === 2 ? 'player2' : ''} ${
           isDropTarget ? 'dropping' : ''
-        } ${isWinningCell ? 'winning' : ''}`}
+        } ${isWinningCell ? 'winning' : ''} ${isFinalWinningCell ? 'final-winning' : ''}`}
       >
         {player && (
-          <div className={`piece player${player}`}>
+          <div className={`piece player${player} ${isFinalWinningCell ? 'final-winning-piece' : ''}`}>
             <div className="piece-shine"></div>
           </div>
         )}

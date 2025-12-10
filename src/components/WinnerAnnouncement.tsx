@@ -20,8 +20,8 @@ const WinnerAnnouncement: React.FC<WinnerAnnouncementProps> = ({ winner, gameMod
   }, [onClose]);
 
   const winnerText = gameMode === 'robot' 
-    ? (winner === 1 ? '🎉 You Win! 🎉' : '😢 Robot Wins!')
-    : `🏆 Player ${winner} Wins! 🏆`;
+    ? (winner === 1 ? 'You Win!' : 'Robot Wins!')
+    : `Player ${winner} Wins!`;
 
   return (
     <div className={`winner-announcement ${visible ? 'show' : 'hide'}`}>

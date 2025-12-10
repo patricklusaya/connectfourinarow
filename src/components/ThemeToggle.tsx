@@ -17,7 +17,7 @@ const ThemeToggle: React.FC = () => {
 
   return (
     <button className="theme-toggle" onClick={handleToggle} aria-label="Toggle theme">
-      {theme === 'light' ? '🌙' : '☀️'}
+      <span className="theme-icon">{theme === 'light' ? 'Dark' : 'Light'}</span>
     </button>
   );
 };

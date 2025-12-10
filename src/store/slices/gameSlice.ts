@@ -12,6 +12,7 @@ interface GameState {
   gameMode: GameMode;
   loading: boolean;
   winningCells: WinningCell[];
+  lastPlacedCell: WinningCell | null;
 }
 
 const ROWS = 6;
@@ -24,6 +25,7 @@ const initialState: GameState = {
   winningCells: [],
   gameMode: null,
   loading: false,
+  lastPlacedCell: null,
 };
 
 // Initialize empty board
@@ -251,6 +253,7 @@ const gameSlice = createSlice({
         state.board = newBoard;
         state.winner = winner;
         state.winningCells = winResult.won ? winResult.cells : [];
+        state.lastPlacedCell = { row, col };
         
         if (!winner) {
           state.currentPlayer = state.currentPlayer === 1 ? 2 : 1;
@@ -275,6 +278,7 @@ const gameSlice = createSlice({
           state.board = newBoard;
           state.winner = winner;
           state.winningCells = winResult.won ? winResult.cells : [];
+          state.lastPlacedCell = { row, col: bestCol };
           
           if (!winner) {
             state.currentPlayer = 1;
@@ -287,6 +291,7 @@ const gameSlice = createSlice({
       state.currentPlayer = 1;
       state.winner = null;
       state.winningCells = [];
+      state.lastPlacedCell = null;
     },
     setGameMode: (state, action: PayloadAction<GameMode>) => {
       state.gameMode = action.payload;
@@ -294,6 +299,7 @@ const gameSlice = createSlice({
       state.currentPlayer = 1;
       state.winner = null;
       state.winningCells = [];
+      state.lastPlacedCell = null;
     },
   },
 });

@@ -18,7 +18,7 @@ const GameModeSelector: React.FC = () => {
           className="mode-button mode-friend"
           onClick={() => handleSelectMode('friend')}
         >
-          <div className="mode-icon">👥</div>
+          <div className="mode-icon mode-icon-friend"></div>
           <div className="mode-title">Play vs Friend</div>
           <div className="mode-description">Two players on the same device</div>
         </button>
@@ -26,7 +26,7 @@ const GameModeSelector: React.FC = () => {
           className="mode-button mode-robot"
           onClick={() => handleSelectMode('robot')}
         >
-          <div className="mode-icon">🤖</div>
+          <div className="mode-icon mode-icon-robot"></div>
           <div className="mode-title">Play vs Robot</div>
           <div className="mode-description">Challenge the AI opponent</div>
         </button>

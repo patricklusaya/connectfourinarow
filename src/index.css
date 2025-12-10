@@ -7,23 +7,23 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #6b21a8;
+  background-color: #d431a5;
 }
 
 html {
-  background-color: #6b21a8;
-  background: linear-gradient(to bottom, #6b21a8 0%, #581c87 50%, #4c1d95 100%);
+  background-color: #d431a5;
+  background: linear-gradient(to bottom, #d431a5 0%, #b8258d 50%, #9d1a75 100%);
 }
 
 /* Light theme (default) */
 :root,
 [data-theme='light'] {
-  --bg-primary: #6b21a8;
-  --bg-secondary: #7c3aed;
-  --bg-tertiary: #8b5cf6;
-  --text-primary: #f3e8ff;
-  --text-secondary: #e9d5ff;
-  --border-color: #a78bfa;
+  --bg-primary: #d431a5;
+  --bg-secondary: #e047b8;
+  --bg-tertiary: #ec5dca;
+  --text-primary: #fff0fa;
+  --text-secondary: #ffe8f5;
+  --border-color: #f08dd1;
   --shadow: rgba(0, 0, 0, 0.3);
 }
 
@@ -53,8 +53,8 @@ body {
   min-height: 100vh;
   max-height: 100vh;
   overflow: hidden;
-  background-color: #6b21a8;
-  background: linear-gradient(to bottom, #6b21a8 0%, #581c87 50%, #4c1d95 100%);
+  background-color: #d431a5;
+  background: linear-gradient(to bottom, #d431a5 0%, #b8258d 50%, #9d1a75 100%);
 }
 
 #root {
@@ -62,7 +62,7 @@ body {
   min-height: 100vh;
   max-height: 100vh;
   overflow: hidden;
-  background-color: #6b21a8;
+  background-color: #d431a5;
 }
 
 h1 {
@@ -91,13 +91,13 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #f3e8ff;
-    background-color: #6b21a8;
+    color: #fff0fa;
+    background-color: #d431a5;
   }
   a:hover {
-    color: #a78bfa;
+    color: #f08dd1;
   }
   button {
-    background-color: #7c3aed;
+    background-color: #e047b8;
   }
 }
