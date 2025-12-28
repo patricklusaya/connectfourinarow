@@ -3,6 +3,7 @@ import { useAppSelector } from '../store/hooks';
 import GameModeSelector from './GameModeSelector';
 import GameBoard from './GameBoard';
 import GameControls from './GameControls';
+import BuyMeACoffee from './BuyMeACoffee';
 import '../styles/Game.css';
 
 const Game: React.FC = () => {
@@ -28,6 +29,7 @@ const Game: React.FC = () => {
           <GameBoard />
         </>
       )}
+      <BuyMeACoffee />
     </div>
   );
 };
