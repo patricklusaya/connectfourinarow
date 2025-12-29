@@ -1,14 +1,7 @@
 import React from 'react';
-import { track } from '@vercel/analytics';
 import '../styles/BuyMeACoffee.css';
 
 const BuyMeACoffee: React.FC = () => {
-  const handleClick = () => {
-    track('buy_me_coffee_click', {
-      location: 'bottom_right_button',
-    });
-  };
-
   return (
     <a
       href="https://buymeacoffee.com/patricklusaya"
@@ -16,7 +9,6 @@ const BuyMeACoffee: React.FC = () => {
       rel="noopener noreferrer"
       className="buy-me-coffee"
       aria-label="Buy me a coffee"
-      onClick={handleClick}
     >
       <svg
         width="20"
